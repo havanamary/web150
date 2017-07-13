@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>King County Shelters</title>
+    </head>
+        <body>
+            <h1>Shelter Beds Available</h1>
+                <div id="info">
+                    <h2>Bed Availibility</h2>
+                    <div id="shelter1"></div>
+                    <div id="shelter2"></div>
+                    <div id="shelter3"></div>
+                </div>
+            <script>
+                //create a template for objects that are shelter
+                function Shelter(name, beds, taken) {
+                    this.name = name;
+                    this.beds = beds;
+                    this.taken = taken;
+                    this.checkTaken = function(){
+                        return this.beds - this.taken;
+
+                    };
+                }
+
+                // create two new hotels objects
+                var pioneerShelter = new Shelter("Pioneer", 20, 5);
+                var madisonShelter = new Shelter("Madison", 30, 7);
+                var caphillShelter = new Shelter("Capitol Hill", 20, 19);
+
+                //update the HTML page
+                var details1 = pioneerShelter.name + ' Beds: ';
+                details1 += pioneerShelter.checkTaken();
+                var details2 = madisonShelter.name + ' Beds: ';
+                details2 += madisonShelter.checkTaken();
+                var details3 = madisonShelter.name + ' Beds: '; details3 += caphillShelter.checkTaken();
+
+                var elShelter1 = document.getElementById("shelter1");
+                elShelter1.textContent = details1;
+                var elShelter2 = document.getElementById("shelter2");
+                elShelter2.textContent = details2;
+                var elShelter3 = document.getElementById("shelter3");
+                elShelter3.textContent = details3;
+            </script>
+        </body>
+</html>

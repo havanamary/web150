@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title> Grade Calculator</title>
+    </head>
+        <body>
+            <div id="answer">Your Grade</div>
+        <script>
+            //variable scores
+            var score = parseFloat(prompt("Enter your grade score: (e.g 0 to 100)")); //score
+            var msg = 'You entered a score of: ' + score + '. \nYou have an: '; 
+            //process of grades
+            if (score >= 101){
+                msg += 'ReEnter your information!';
+            } else if (score >= 88) {
+                msg += 'A. \nGREAT JOB!';
+            } else if (score >= 80) { 
+                msg += 'B. \nGood Job!';
+            } else if (score >= 68) { 
+                msg += 'C. \nYou Passed!';
+            } else if (score >= 60) { 
+                msg += 'D. \nYou need to focus on your sudies.';
+            } else if (score <= 59) { 
+                msg += 'F. \nPlease make an appointment with me to discuss your grade.';
+            }             
+            // alert user of score and grades
+            alert(msg); 
+            //write message
+            var el = document.getElementById("answer");
+            el.innerHTML = msg;    
+        </script>
+        </body>
+</html>

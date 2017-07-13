@@ -1,0 +1,31 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>First Jquery Example</title>
+    <link rel="stylesheet" href="css/c07.css"/>
+</head>
+<body>
+    <div id="page">
+    <h1 id="header">List</h1>
+    <h2>Buy Groceries</h2>
+        <ul>
+            <li id="one" class="hot"><em>fresh</em>figs</li>
+            <li id="two" class="hot">pine nuts</li>
+            <li id="three" class="hot">honey</li>
+            <li id="four" >balsamic vinegar</li>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script> 
+        //call your element and add the class
+        $('#header').addClass('headline');
+        //target the elements you want to add the effect to 
+        $('li:lt(3)').hide().fadeIn(2000);
+        // select the element you want to add the function to
+        $('li').on('click', function() {
+        //once the element has been clicked remove from the list
+            $(this).remove()
+        });
+    </script>
+</body>
+</html>

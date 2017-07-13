@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <title>JavaScript &amp; jQuery - Chapter 8: Ajax &amp; JSON - Loading HTML</title>
+   <link rel="stylesheet" href="css/c08.css" />
+ </head>
+ <body>
+     <header><h1>THE MAKER BUS</h1></header>
+     <h2>the bus stops here</h2>
+     <section id="content"></section>
+     <script>
+        //create XMLHttpRequest object
+        var xmlReq = new XMLHttpRequest();
+
+        //when the responsehas loaded
+        xmlReq.onload = function(){
+            //and if server status is ok
+            if(xmlReq.status === 200){
+                //update html
+                document.getElementById('content').innerHTML = xmlReq.responseText;
+            }
+        };
+
+        xmlReq.open('GET', 'data/data.html', true);
+        xmlReq.send(null);
+     </script>
+ </body>
+</html>

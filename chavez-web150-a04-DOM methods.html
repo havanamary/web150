@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex,nofollow" />
+        <meta charset="utf-8">
+        <title>DOM Methods</title>
+    </head>
+    <style>
+        *{ margin: 0; padding: 0; box-sizing: border-box; }
+        
+        @font-face {
+            font-family: 'arial';
+            src: url('fonts/ArialMT.ttf');
+            font-weight: normal;
+            font-style: normal;
+        }
+        nav {
+            border: 1px solid powderblue;
+        }
+        
+        li {
+            padding: 1em;
+            margin: .5em;
+            background-color: aqua;
+            list-style-type: none;
+            text-align: center;
+            display: grid;            
+        }
+        .color {
+            background-color: #a06cc0;
+            color: #fff;
+        }
+    </style>
+        <body>
+            <h2>A Smelly Situation Soap Co.</h2>
+            <nav id="navigation">
+                <ul>
+                    <li id="one" class="hot">HOME</li>
+                    <li id="two" class="hot">ABOUT</li>
+                    <li id="three" class="hot">PRODUCTS</li>
+                            <ul id="collection">
+                                <li class="seasonal"><span>COLLECTIONS</span></li>
+                                <li class="color"><span>ORGANICS</span></li>
+                                <li><span>GIFT BASKETS</span></li>
+                            </ul>   
+                    <li id="four" >CONTACT</li>
+                    <li id="five" >CART</li>
+                </ul>
+                <div id="paragraph"></div>
+            </nav>
+            <script>
+            //ex1 new element
+                //create a new element and store in variable
+                var newEl = document.createElement("li");
+
+                //create a text node and store in a variable
+                var newText = document.createTextNode("FAQ\'s");
+                //attach the text node to the new element
+                newEl.appendChild(newText);
+
+                //find position where to add new element
+                var position = document.getElementsByTagName('ul')[0];
+
+                //insert the new element 
+                position.appendChild(newEl);  
+            //ex2 change element
+                var elements = document.getElementsByClassName('seasonal');  // access the hot items
+
+                if (elements.length > 3) {
+                    var el = elements [3]; //slect the third item  in the node list
+                    el.className = 'color'; // change the value of the class attributes
+                }
+            //ex3 change attributes
+                //create a new element and store in variable
+                var para2 = document.querySelector('div');
+                
+                para2.style.color = 'red';
+
+                
+            //ex4
+                var para = document.getElementById('paragraph')
+                
+                if (para.hasAttribute('id')) {
+                    var attribute = para.getAttribute('id')
+        
+                }
+                var el = document.getElementById('paragraph');
+                el.innerHTML = "<p> I cannot believe this homework took so much time to show that this is a" + attribute + ".";
+            </script> 
+        </body>
+</html>

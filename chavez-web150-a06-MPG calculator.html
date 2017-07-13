@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow" />
+    <meta charset="utf-8">
+    <title>MPG Calculator</title>
+    <style>
+    td {
+        border: 1px solid black;
+        padding: 20px;
+        margin: 20px;
+     }
+    </style>
+</head>
+    <body>
+        <form id="mpgTotal" action="">
+            <table style ="width:75%">
+                <tr>
+                    <td colspan=2>MPG Calculator</td>
+                </tr>
+                <tr>
+                    <td colspan=2>How many miles per gallon does your car use:</td>
+                </tr>
+                <tr> 
+                    <td>Enter Miles Driven:</td> 
+                    <td><input type="number" id="milesDriven"/></td> 
+                </tr>
+                <tr> 
+                    <td>Enter gallons of gas used:</td>
+                    <td><input type="number" id="fuel"/></td>
+                </tr>
+                <tr> 
+                    <td>Your car consumes the following mpg:</td>
+                    <td><input type="text" id="total" disabled="disabled" value="0.00"/></td>
+                </tr> 
+                <tr> 
+                    <td>Click to Calculate:</td>
+                    <td><input type="button" onclick='mpgTotal()'  id="calculate" value="Calculate" /></td>
+                </tr>
+                <tr>
+                <td>Click to Clear:</td>
+                <td><input type="submit"  id="clear" value="Clear"/></td>
+                </tr>
+            </table>
+        </form>
+    <footer>
+        <hr>
+            <p><small>&copy; 2016 -
+            2017    by <a href="#" target="_blank">Emilio Chavez</a>, All Rights Reserved ~ <a href="http://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~ <a href="http://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a></small></p>
+    </footer>
+        <script>
+            function mpgTotal() {
+                var milesDriven = parseFloat(document.getElementById('milesDriven').value);
+                var fuel = parseFloat(document.getElementById('fuel').value);
+                var msg = '';
+                   
+                if (milesDriven >= 999){
+                        alert(msg+= 'Please enter valid number between 0 and 100');  
+                }else if (fuel <= .01){
+                        alert(msg+= 'Please enter valid number between 0 and 100');  
+                }else if (milesDriven >= 1 && fuel >= .01){
+                    var total = milesDriven/fuel; 
+                    total;  
+                document.getElementById('total').value = total.toFixed(2);
+                }
+            }
+            function formReset(){
+                document.getElementById('mpgTotal').reset();
+            }
+             
+            document.getElementById('calculate').addEventListener('click', mpgTotal);
+            document.getElementById('clear').addEventListener('click', formReset);    
+    </script>
+    </body>
+</html>

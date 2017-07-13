@@ -1,0 +1,35 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>First Jquery Example</title>
+    <link rel="stylesheet" href="css/c07.css"/>
+</head>
+<body>
+    <div id="page">
+    <h1 id="header">List</h1>
+    <h2>Buy Groceries</h2>
+        <ul>
+            <li id="one" class="hot"><em>fresh</em> figs</li>
+            <li id="two" class="hot">pine nuts</li>
+            <li id="three" class="hot">honey</li>
+            <li id="four" >balsamic vinegar</li>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        //when the document is ready on click 
+       $(function(){
+           //when you click on the list items
+          $('li').on('click', function(){ //handle event with this anymouse function
+             $(this).animate({ //call anumate method on the currently selected
+                 opacity: 0.0, // anumate opacity, padding left
+                 paddingLeft: '+=80',
+             }, 3000, function (){ // then we wait for 1/2 sec,
+                 $(this).remove(); //then we remove the current item
+            });
+          });
+       });
+    
+    </script>
+</body>
+</html>

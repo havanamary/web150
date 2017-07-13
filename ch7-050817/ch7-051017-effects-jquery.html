@@ -1,0 +1,36 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>First Jquery Example</title>
+    <link rel="stylesheet" href="css/c07.css"/>
+</head>
+<body>
+    <div id="page">
+    <h1 id="header">List</h1>
+    <h2>Buy Groceries</h2>
+        <ul>
+            <li id="one" class="hot"><em>fresh</em> figs</li>
+            <li id="two" class="hot">pine nuts</li>
+            <li id="three" class="hot">honey</li>
+            <li id="four" >balsamic vinegar</li>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    
+       $(function(){
+          $('h2').hide().slideDown(2000);
+            var $li = $('li');
+           // ..each is how loop in jquery
+           $li.hide().each(function(index){
+               $(this).delay(700 * index).fadeIn(700);
+           });
+           $li.on('click', function(){
+               $(this).fadeOut(700)
+                
+           });
+       });
+    
+    </script>
+</body>
+</html>

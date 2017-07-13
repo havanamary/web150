@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript Variables and Operator
+    </title>
+    </head>
+<body>
+    <h3>Meal Order Summary</h3>
+    <h3 id="message">Your Bill: </h3>
+     <script>
+            // set scores
+            var amount = parseFloat(prompt("Total amount (e.g. 15 for 15%)"));
+            var tip = parseFloat(prompt("Enter the tip amuont (e.g. 15 for 15%)"));; //msg
+                
+           var total = amount + tip
+           
+           var message = "Your Total is " + total;
+         
+           var el = document.getElementById("message");
+            el.innerHTML = message;
+            </script> 
+    </body>
+</html>

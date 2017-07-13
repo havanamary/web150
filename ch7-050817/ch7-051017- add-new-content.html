@@ -1,0 +1,36 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>First Jquery Example</title>
+    <link rel="stylesheet" href="css/c07.css"/>
+</head>
+<body>
+    <div id="page">
+    <h1 id="header">List</h1>
+    <h2>Buy Groceries</h2>
+        <ul>
+            <li id="one" class="hot"><em>fresh</em> figs</li>
+            <li id="two" class="hot">pine nuts</li>
+            <li id="three" class="hot">honey</li>
+            <li id="four" >balsamic vinegar</li>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    
+       $(function(){
+          //$() means it is a jquery object
+            //. before  places an items before the elements listed
+           $('ul').before('<p class="notice"> Just Updated</p>');
+           //.prepend places an item before the selected class
+           $('li.hot').prepend('+ ');
+           // .append appends item to the other size
+           $('li.hot').append('= ');
+           // .after places an item after
+           var $newListItem = $('<li><em>gluten-free</em>soy sauce </li>');
+           $('li:last').after($newListItem);
+       });
+    
+    </script>
+</body>
+</html>

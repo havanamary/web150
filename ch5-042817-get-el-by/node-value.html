@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+    <link rel="stylesheet" href = "css/c05.css">
+    <head>
+    <title>Node Value</title>
+</head>
+    <body>
+        <div id="page"></div>
+        <h1 id="header">List</h1>
+        <h2>Buy Groceries</h2>
+        <ul>
+            <li id="one" class="hot"><em>Fresh</em> Figs</li>
+            <li id="two" class="hot">Pine Nuts</li>
+            <li id="three" class="hot">Honey</li>
+            <li id="three" >Balsalmic Vinegar</li>
+        </ul>
+    <script>
+        var itemTwo = document.getElementById('two'); //get second list item
+        var elText = itemTwo.firstChild.nodeValue; //get the content
+        elText = elText.replace('Pine Nuts', 'Kale');
+
+        itemTwo.firstChild.nodeValue = elText;
+    </script>
+</body>
+</html>

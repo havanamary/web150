@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+//animation
+$(document).ready(function(){
+    
+    $('h1').animate({
+        'font-size':'650%', 'paddingRight': '+375px', 'opacity':'100%'
+    }, 500);
+    $('h1').animate({
+        'font-size':'175%', 'paddingRight': '0', 'opacity':'100%'
+    }, 500);
+});
+   
+// toggle  
+$(function() {
+        $('.answer,.answer2,.answer3').hide();
+        $('.minus, .minus2,.minus3').hide();
+    
+        $('.one').click(function(){
+        $('.answer').toggle();
+            if ($('.one').on('click')){
+                $('.plus').hide();
+                $('.minus').show();
+             } else {
+                $('.plus').show();
+                $('.minus').hide();
+             };        
+    }); 
+        $('.two').click(function(){
+        $('.answer2').toggle();
+            if ($('.two').on('click')){
+            $('.plus2').hide();
+            $('.minus2').show();
+         } else {
+            $('.plus2').show();
+            $('.minus2').hide();
+         };
+    });
+        $('.three').click(function(){
+        $('.answer3').toggle();
+            if ($('.three').on('click')){
+            $('.plus3').hide();
+            $('.minus3').show();
+         } else {
+            $('.plus3').show();
+            $('.minus3').hide();
+         };
+    });
+});
+    
+    
+</script>
+    <style>
+    body {
+        width: 750px;
+        margin:auto;
+        margin-top:40px;
+        border: 2px solid blue;
+        }
+        h1 {
+            color: blue;
+            padding-left: 35px;
+            
+        }
+        img {
+            float: left;
+            padding-top: 5px;
+        }
+        .one, .two, .three {
+            padding-left: 30px;
+        }
+    </style>
+</head>
+<body>
+<h1>jQuery FAQ's</h1>
+    <ul>
+    
+    </ul>
+<div class="one"><img class="plus" src="images/plus.png"/><img class="minus" src="images/minus.png"/><h2>What is jQuery?</h2>
+        <p class="answer">jQuery is a library of the JavaScript functions that you're most likely to need as you develop web sites.</p>
+</div> 
+<div class="two"><img class="plus2" src="images/plus.png"/><img class="minus2" src="images/minus.png"/><h2>Why is jQuery becoming so popular?</h2>
+    <div class="answer2">    
+        <h3>Three reasons:</h3>
+            <ol>
+                <li>It's free.</li>
+                <li>It lets you get more done in less time.</li>
+                <li>All of its functions are cross-browser compatible.</li>
+            </ol>
+    </div> 
+</div>
+<div class="three"><img class="plus3" src="images/plus.png"/><img class="minus3" src="images/minus.png"/><h2>Which is harder to learn: jQuery or JavaScript?</h2>
+    <p class="answer3">For most functions, jQuery is significantly easier to learn and use than JavaScript. But remember that jQuery is JavaScript.
+</p>
+</div>
+</body>
+</html>

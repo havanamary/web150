@@ -1,0 +1,33 @@
+<!DOCTYP
+E html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex,nofollow" />
+        <meta charset="utf-8">
+        <title>Grade Average Calculator</title>
+    </head>
+        <body>
+            <h2>Average Grade Calculator</h2>
+            <script>
+                var grade = parseFloat(prompt("Enter grade score 0-100 \nOr enter 999 to exit.", "0"));
+                var entries = 0; 
+                var totalGrades = 0; 
+                var average = totalGrades / entries;
+            
+                do {
+                    totalGrades += grade;
+                    grade = parseFloat(prompt("Enter grade score 0-100 \nOr enter 999 to exit.", "0"));
+                    entries++;
+                    average = totalGrades / entries;
+                    if (grade === 999){
+                        break;
+                    } 
+                }   
+                
+                while (grade >= 0 && grade <=100); 
+                
+                document.write ("Total score entered:" + totalGrades + "<br>You average total is: " + average);    
+            </script> 
+        </body>
+</html>

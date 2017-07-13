@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex,nofollow" />
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/050117-events.css"/>
+        <title>Position</title>
+    </head>
+        <body id="body">
+            <div id="stats">
+                screenX: <input type="text" id="sx"/>
+                screenY: <input type="text" id="sy"/>
+                
+                <span class="divider"> | </span>
+            
+                screenX: <input type="text" id="px"/>
+                screenY: <input type="text" id="py"/>
+            
+                screenX: <input type="text" id="cx"/>
+                screenY: <input type="text" id="cy"/>
+            </div>
+            
+            <div id="page">
+            <h2>Buy Groceries</h2>
+                <ul>
+                <li>Lettuce</li>
+                <li>Tomatos</li>                       
+                <li>Beets</li>
+                <li>Broccoli</li>
+                <li>Spinach</li>
+                </ul>
+            </div>
+                <script>
+                    var sx = document.getElementById('sx');
+                    var sy = document.getElementById('sy'); 
+                    
+                    var px = document.getElementById('px');
+                    var py = document.getElementById('py');
+                    
+                    var cx = document.getElementById('cx');
+                    var cy = document.getElementById('cy');
+                    
+                    function showPosition(event){
+                        sx.value = event.screenX;
+                        sy.value = event.screenY;
+                        px.value = event.pageX;
+                        py.value = event.pageY;
+                        cx.value = event.clientX;
+                        cy.value = event.clientY;
+                    }
+                    
+                    var el = document.getElementById("body");
+                    el.addEventListener('mousemove', showPosition, false);
+                </script>
+    </body>
+</html>

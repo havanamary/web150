@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex,nofollow" />
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/050117-events.css"/>
+        <title>Events - Event Handlers</title>
+    </head>
+        <body>
+            <h2>Event Handlers</h2>
+            <div id="page">
+                <h3>New Account</h3>   
+                <form method="post" action="">
+                    <label for="username">Create A Username:</label>
+                    <input type="text" id="username"/>
+                    <div id="feedback"></div>
+
+                    <label for="password">Create Password:</label> 
+                    <input type="password" id="password"/>
+
+                    <input type="submit"  value="sign in"/>
+                </form>
+                </div>
+                <script>
+                function checkUserName(){
+                    
+                    var elMsg = document.getElementById('feedback');
+                    if (this.value.length < 5){
+                        elMsg.textContent = "Username must be 5 character or more";
+                    } else
+                        elMsg.textContent='';
+                    }
+                
+                var elUsername = document.getElementById('username');
+                    elUsername.onblur = checkUserName;//when the focus is lost, call checkUserName function
+                </script>  
+        </body>
+</html>

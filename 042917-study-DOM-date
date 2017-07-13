@@ -1,0 +1,47 @@
+var firstItem = document.getElementById('one');
+        firstItem.className ='complete';
+
+        var fourthItem = document.getElementsByTagName('li').item(3); //fourth item
+        fourthItem.setAttribute('class', 'cool');
+
+
+
+        var secondItem = document.getElementsByTagName('li').item(1);//second item
+        if(secondItem.hasAttribute('class')){
+            secondItem.removeAttribute('class');
+        }
+        
+        // var mynewElement = document.createElement ('li');
+                //var myElement = document.appendChild ('myNewElement');
+                //var myText = document.createTextNode ("new list Item")
+                //var myProducts = document.getElementById('three');
+                var springmin = (0000,03,20);
+                var springmax = (0000,06,20);
+                var summermin = (0000,06,21);
+                var summermax = (0000,09,20);
+                var fallmin = (0000,09,22);
+                var fallmax = (0000,12,20);
+                var wintermin = new Date (0000, 12,21);
+                var wintermax = 
+                
+               var minDate = new Date ('01/01/0000')
+               var maxDate = new Date ('01/01/000')
+               
+               if (currentDate > minDate && currentDate < maxDate){
+                   
+                   alert('Correct Date')
+                    
+                   
+               }
+                else {
+                    alert('Outside range!!')
+                }
+                
+                var today = new Date ()
+                document.onclick = 
+                    
+                    if(getDate <=  
+                
+                {
+                    
+                }

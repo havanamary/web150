@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>Invoice Calculator</title>
+</head>
+<html>
+    <body>
+        <h2>web150-a01-invoice</h2>
+    <h2 id="output"></h2>
+    <script>
+    // this is a single line comment
+    /* this a multi 
+    line comment
+    it can go on and on....*/
+        
+        
+    // ask for the invoice amount
+    var amount = prompt("What is your invoice amount?", "0.00")
+    
+    //taxRate
+    var taxRate = 1.1
+        
+    //create a parseFloat
+    var numbers = parseFloat(amount);
+        
+    //multiplication of tax and total amount
+    var total = amount * taxRate;
+        
+    //proces javascript    
+    document.getElementById("output").innerHTML = "You said your total amount was, " + amount + "!" + "<br> Your total with tax is: " + total.toFixed(2);
+
+    </script>
+</body>
+</html>

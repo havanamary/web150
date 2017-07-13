@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <title>Jquery flickr api</title>
+   <style>
+    #container {}
+   </style>
+ </head>
+ <body>
+     <header><h1>working with getJSONData method</h1></header>
+     <div id="container"></div>
+     <button onclick="getJSONData()">load flickr images</button>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script>
+     function getJSONData(){
+        var flickrApi = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+
+            $.getJSON(flickrApi, {
+                tags: "clown",
+                tagmode: "any",
+                format: "json"
+            },
+            succeeded);
+
+            function succeeded(result){
+                $.each(result.items, function(i, item){
+                    $("<img>").attr("src", item.media.m).appendTo("#container");
+                    if(i===5){
+                        return false;
+                    }
+                });
+                function fail(xhr,status, strErr){
+                    alert(strErr);
+                }
+            }
+        }
+     </script>
+ </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <link rel="stylesheet" href = "css/c05.css">
+    <head>
+    <title>DOM - Get Elements by Class Name</title>
+</head>
+    <body>
+        <div id="page"></div>
+        <h1 id="header">List</h1>
+        <h2>Buy Groceries</h2>
+        <ul>
+            <li id="one" class="hot"><em>fresh</em>figs</li>
+            <li id="two" class="hot">Pine Nuts</li>
+            <li id="three" class="hot">Honey</li>
+            <li id="three" >Honey</li>
+        </ul>
+    <script>
+        var elements = document.getElementsByClassName('hot');  // access the hot items
+
+        if(elements.length > 2) ;{
+            var el = elements [2]; //slect the third item  in the node list
+            el.className='cool'; // change the value of the class attributes
+        }
+    </script>
+</body>
+</html>
